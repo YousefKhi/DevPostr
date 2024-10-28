@@ -1,4 +1,7 @@
+
 import ButtonAccount from "@/components/ButtonAccount";
+import Form from "@/components/Form";
+import GitHubData from '@/components/GitHubData';
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +14,7 @@ export default async function Dashboard() {
       <section className="max-w-xl mx-auto space-y-8">
         <ButtonAccount />
         <h1 className="text-3xl md:text-4xl font-extrabold">Private Page</h1>
+        <GitHubData />
       </section>
     </main>
   );
