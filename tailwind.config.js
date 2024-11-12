@@ -148,10 +148,10 @@ module.exports = {
       {
         mytheme: 
         {
-          "primary": "#635bff",
-          "secondary": "#D6EFFF",
-          "accent": "#FED99B",
-          "neutral": "#FE654F",
+          "primary": "#F4F4F4",
+          "secondary": "#A594F9",
+          "accent": "#000000",
+          "neutral": "#A594F9",
           "base-100": "#FEFEFF",},
         },
       ],
