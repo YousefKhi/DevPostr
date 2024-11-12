@@ -10,7 +10,7 @@ export const sendOpenAi = async (messages, userId, max = 100, temp = 1) => {
   );
 
   const body = JSON.stringify({
-    model: "gpt-4",
+    model: "o1",
     messages,
     max_tokens: max,
     temperature: temp,

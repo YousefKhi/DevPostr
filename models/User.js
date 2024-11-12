@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import toJSON from "./plugins/toJSON";
+import Github from "next-auth/providers/github";
 
 // USER SCHEMA
 const userSchema = mongoose.Schema(
@@ -35,6 +36,14 @@ const userSchema = mongoose.Schema(
     hasAccess: {
       type: Boolean,
       default: false,
+    },
+    TwitterToken: {
+      type: String,
+      private: true,
+    },
+    GithubToken: {
+      type: String,
+      private: true,
     },
   },
   {

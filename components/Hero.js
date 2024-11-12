@@ -1,6 +1,9 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
+import BoxReveal from "./ui/box-reveal";
+import PulsatingButton from "./ui/pulsating-button";
+
 
 const Hero = () => {
   return (
@@ -21,17 +24,29 @@ const Hero = () => {
           </svg>
         </a>
 
-        <h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4">
-  Turn Your<span className="text-primary"> Git Commits</span> into 
-  <span className="text-primary"> Viral </span> Social Media Updates!
+        
+<h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4">
+  <BoxReveal boxColor={"#635bff"} duration={0.5}>
+          Turn Your<span style={{ color: "#635bff" }}> Git</span>
+  </BoxReveal>
+  <BoxReveal boxColor={"#635bff"} duration={0.5}>
+  <span style={{ color: "#635bff" }}> Commits</span> 
+  </BoxReveal>
+  <BoxReveal boxColor={"#635bff"} duration={0.5}>
+    into 
+    <span style={{ color: "#635bff" }}> Viral </span> Social Media
+  </BoxReveal>
+  <BoxReveal boxColor={"#635bff"} duration={0.5}>
+    Updates!
+  </BoxReveal>
+  
 </h1>
+
 
         <p className="text-lg opacity-80 leading-relaxed">
         Effortlessly share your startup journey across social media with automated updates straight from your git commits, Engage with your audience and drive interest in your startup
         </p>
-        <button className="btn btn-primary btn-wide">
-          Get {config.appName}
-        </button>
+        <PulsatingButton pulseColor="rgba(99,91,255,255)">Get DevPostr</PulsatingButton>
 
         <TestimonialsAvatars priority={true} />
       </div>
