@@ -26,7 +26,7 @@ const config = {
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Monthly subscription",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for new media posters",
+        description: "Perfect for new developers",
         // The price you want to display, the one user will be charged on Stripe.
         price: 4.99,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
@@ -35,8 +35,8 @@ const config = {
           {
             name: "Ai generated tweets from github repos",
           },
-          { name: "Social Media Insights" },
-          { name: "simultaneous posting on multiple accounts" },
+          { name: "Post right from your Dashboard!" },
+          { name: "Schedule Tweets" },
           ,
         ],
       },
@@ -55,9 +55,10 @@ const config = {
           {
             name: "Ai generated tweets from github repos",
           },
-          { name: "Social Media Insights" },
-          { name: "simultaneous posting on multiple accounts" },
+          { name: "Post right from your Dashboard!" },
+,
           { name: "24/7 support" },
+          { name: "Schedule Tweets" },  
         ],
       },
     ],

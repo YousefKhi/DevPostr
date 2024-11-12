@@ -131,7 +131,7 @@ export default function GitHubData({ userId }) {
           {repos.map((repo) => (
             <li key={repo.id} style={{ marginBottom: "1rem", listStyleType: "none" }}>
               <button
-                className="btn btn-outline btn-primary"
+                className="btn btn-outline btn-accent text-white"
                 onClick={() => fetchCommits(repo.owner.login, repo.name)}
               >
                 {repo.name}              

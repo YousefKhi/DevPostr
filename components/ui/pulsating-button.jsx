@@ -18,6 +18,7 @@ export default function PulsatingButton({
       )}
       style={
         {
+          backgroundColor: "#A594F9",
           "--pulse-color": pulseColor,
           "--duration": duration
         }
