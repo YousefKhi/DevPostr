@@ -44,12 +44,10 @@ export async function POST(req) {
       accessSecret: 'h66IL0SefHBPhDqmiBWXSU2fSQRvbsJPmadMdSjmjQccQ',
     });
 
-    
     // Post the tweet using v2 API
-    const response = await twitterClient.v2.tweet({text: tweet});
+    const response = await twitterClient.v2.tweet({ text: tweet });
 
     if (response.data) {
-      console.log("Tweet posted successfully:", response.data);
       return NextResponse.json({ 
         message: "Tweet posted successfully", 
         data: response.data 
@@ -60,7 +58,6 @@ export async function POST(req) {
       }, { status: 500 });
     }
   } catch (error) {
-    console.error("Error posting tweet:", error);
     return NextResponse.json({ 
       error: "Failed to post tweet", 
       details: error.message 

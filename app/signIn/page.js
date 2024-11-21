@@ -1,7 +1,5 @@
 
 import React from 'react';
-import DashboardHeader from "@/components/DashboardHeader";
-import MenuIcons from "@/components/MenuIcons";
 import Form from '@/components/Form';
 
 export const dynamic = "force-dynamic";

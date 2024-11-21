@@ -27,7 +27,7 @@ const cta = <ButtonAccount extraStyle="btn-primary" />;
 
 // A header with a logo on the left and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
-const DashboardHeader = ({setSelectedItem}) => {
+const DashboardHeader = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
