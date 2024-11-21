@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/icon.png";
 import config from "@/config";
-import ButtonAccount from "./ButtonAccount";;
+import ButtonAccount from "./ButtonAccount";
 
 const links = [
   {
