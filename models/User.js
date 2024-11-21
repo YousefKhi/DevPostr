@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import toJSON from "./plugins/toJSON";
-import Github from "next-auth/providers/github";
 
 // USER SCHEMA
 const userSchema = mongoose.Schema(

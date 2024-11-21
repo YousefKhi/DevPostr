@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import apiClient from "@/libs/api";
 
 const TwitterAccountButton = () => {
