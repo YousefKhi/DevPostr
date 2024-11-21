@@ -14,7 +14,6 @@ const GitHubAccountButton = ({ userId }) => {
   const fetchGitHubAccount = async () => {
     const currentUserId = session?.user?.id;
     if (!currentUserId) return;
-
     try {
       setIsLoading(true);
       const response = await apiClient.post("/database", {
@@ -24,7 +23,8 @@ const GitHubAccountButton = ({ userId }) => {
 
       if (response?.accounts?.length > 0) {
         setGitHubAccount(response.accounts[0]);
-        console.log("GitHub account:", response.accounts[0]);
+        console.log(githubAccount.profile.id);
+        
       } else {
         setGitHubAccount(null);
       }
@@ -50,7 +50,7 @@ const GitHubAccountButton = ({ userId }) => {
         });
         if (response.status === 200) {
           setGitHubAccount(null);
-          fetchGitHubAccount(); // Refresh account status after unlinking
+          fetchGitHubAccount();
         }
       } catch (error) {
         console.error("Error unlinking GitHub account:", error);

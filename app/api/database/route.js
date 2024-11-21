@@ -36,7 +36,7 @@ export async function DELETE(req) {
     const userObjectId = mongoose.Types.ObjectId.isValid(userId) ? new mongoose.Types.ObjectId(userId) : userId;
 
     // Connect to the database
-    await dbConnect();
+    await connectMongo();
 
     // Use Mongoose's deleteOne method to delete the document
     const deleteResult = await Account.deleteOne({ userId: userObjectId, provider });

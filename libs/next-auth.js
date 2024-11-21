@@ -26,6 +26,7 @@ export const authOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      scope:"repo read:user user:email",
       allowDangerousEmailAccountLinking: true,
       async profile(profile) {
         return {
@@ -40,18 +41,13 @@ export const authOptions = {
     TwitterProvider({
       clientId: process.env.TWITTER_CLIENT_ID,
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
-      version: "2.0",
-      allowDangerousEmailAccountLinking: true,
-      async profile(profile) {
-        return {
-          id: profile.id_str,
-          name: profile.name,
-          email: profile.email,
-          image: profile.profile_image_url_https,
-          createdAt: new Date(),
-        };
+      version: "1.0A", // Set to OAuth 1.0a
+      authorization: {
+        url: "https://api.twitter.com/oauth/authorize",
       },
-    }),
+      token: "https://api.twitter.com/oauth/access_token",
+    
+      }),
     ...(connectMongo
       ? [
           EmailProvider({
@@ -85,6 +81,12 @@ adapter: MongoDBAdapter(connectMongo),
     brandColor: config.colors.main,
     logo: LogoName,
     colorScheme: 'auto', // Optional: Light or dark mode support
+  },
+  pages: {
+    signIn: "/signIn",
+    error: "/auth/error",
+    verifyRequest: "/auth/verify-request",
+    newUser: null,
   },
   debug : true,
   

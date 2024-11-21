@@ -1,19 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-
 import { useState, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import apiClient from "@/libs/api";
 
-const TwitterAccountButton = ({ userId }) => {
+const TwitterAccountButton = () => {
   const [twitterAccount, setTwitterAccount] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { data: session } = useSession();
 
   const fetchTwitterAccount = async () => {
     const currentUserId = session?.user?.id;
-    if (!currentUserId) return;
+    if (!currentUserId || twitterAccount) return;
 
     try {
       setIsLoading(true);
@@ -37,7 +35,7 @@ const TwitterAccountButton = ({ userId }) => {
 
   useEffect(() => {
     fetchTwitterAccount();
-  }, [userId, session]);
+  }, [session?.user?.id]);
 
   const handleLink = async () => {
     if (!twitterAccount) {
@@ -50,7 +48,6 @@ const TwitterAccountButton = ({ userId }) => {
         });
         if (response.status === 200) {
           setTwitterAccount(null);
-          fetchTwitterAccount(); // Refresh account status after unlinking
         }
       } catch (error) {
         console.error("Error unlinking Twitter account:", error);
@@ -59,7 +56,6 @@ const TwitterAccountButton = ({ userId }) => {
       }
     }
   };
-
 
   return (
     <Popover className="relative z-10">

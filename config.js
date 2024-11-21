@@ -19,10 +19,7 @@ const config = {
     plans: [
       {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-        priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1QK7n7G8mgv4nIi9gn85mdLn"
-            : "price_456",
+        priceId: "price_1QLD0dG8mgv4nIi9ACb6xK0Z",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Monthly subscription",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
@@ -36,21 +33,18 @@ const config = {
             name: "Ai generated tweets from github repos",
           },
           { name: "Post right from your Dashboard!" },
-          { name: "Schedule Tweets" },
+          ,
           ,
         ],
       },
       {
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
-        priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1O5KtcAxyNprDp7iftKnrrpw"
-            : "price_456",
+        priceId: "price_1QLD4wG8mgv4nIi9qEiHiVvA",
         name: "Forever Deal",
         description: "one time payment Forever!!", 
-        price: 49,
-        priceAnchor: 69,
+        price: 39.99,
+        priceAnchor: 54.99,
         features: [
           {
             name: "Ai generated tweets from github repos",
@@ -58,7 +52,7 @@ const config = {
           { name: "Post right from your Dashboard!" },
 ,
           { name: "24/7 support" },
-          { name: "Schedule Tweets" },  
+          ,  
         ],
       },
     ],

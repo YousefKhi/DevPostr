@@ -8,6 +8,7 @@ import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
 import config from "@/config";
 import ButtonAccount from "./ButtonAccount";
+import MenuIcons, { BurgerIcons } from "./MenuIcons";
 
 const links = [
   {
@@ -28,7 +29,7 @@ const cta = <ButtonAccount extraStyle="btn-primary" />;
 
 // A header with a logo on the left and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
-const DashboardHeader = () => {
+const DashboardHeader = ({setSelectedItem}) => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,6 +37,7 @@ const DashboardHeader = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
+
 
   return (
     <header className="bg-base100">
@@ -157,6 +159,7 @@ const DashboardHeader = () => {
             <div className="divider"></div>
             {/* Your CTA on small screens */}
             <div className="flex flex-col">{cta}</div>
+            
           </div>
         </div>
       </div>

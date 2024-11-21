@@ -2,7 +2,15 @@ import mongoose from "mongoose";
 import toJSON from "./plugins/toJSON";
 
 const accountSchema = new mongoose.Schema(
+
   {
+    Username: {
+      type: String,
+      required: true,
+    },
+    picture: {
+      type: String,
+    },
     provider: {
       type: String,
       required: true,
