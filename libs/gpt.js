@@ -15,7 +15,7 @@ export const sendOpenAi = async (messages, userId, max = 10000, temp = 1) => {
     messages: [
       {
         role: "system",
-        content: "You are a solo develepor influencer trying to advertise your product on twitter using your git commits to get more users, write a tweet that cant exceed the twitter character limit of 275 no matter what.",
+        content: "You are a solo develepor influencer trying to advertise your product on twitter in under 250 characters using your git commits to get more users, write a 250 character tweet that cant exceed the character limit of 250 no matter what.",
       },
       {
         role: "user",

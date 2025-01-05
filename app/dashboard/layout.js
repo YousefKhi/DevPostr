@@ -20,6 +20,7 @@ export default async function LayoutPrivate({ children }) {
     redirect("/#pricing");
   }
   
+  
 
   return <>{children}</>;
 }

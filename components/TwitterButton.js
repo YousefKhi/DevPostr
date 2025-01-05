@@ -22,7 +22,6 @@ const TwitterAccountButton = () => {
 
       if (response?.accounts?.length > 0) {
         setTwitterAccount(response.accounts[0]);
-        console.log("Twitter account:", response.accounts[0]);
       } else {
         setTwitterAccount(null);
       }

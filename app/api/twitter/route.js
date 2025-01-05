@@ -50,7 +50,8 @@ export async function POST(req) {
     if (response.data) {
       return NextResponse.json({ 
         message: "Tweet posted successfully", 
-        data: response.data 
+        data: response.data,
+        notification: "Tweet posted successfully!"
       }, { status: 201 });
     } else {
       return NextResponse.json({ 
@@ -59,8 +60,6 @@ export async function POST(req) {
     }
   } catch (error) {
     return NextResponse.json({ 
-      error: "Failed to post tweet", 
-      details: error.message 
     }, { status: 500 });
   }
 }
